@@ -1,0 +1,93 @@
+{% extends 'shared/_MainLayout.html' %}
+{% block title %}Twitter - Main Page{% endblock title %}
+{% block content %}
+<div class="col m6">
+  <ul class="collection" style="border: none">
+    <li class="collection-item avatar">
+      <img src="images/fotoprofil.jpg" alt="" class="circle" />
+      <span class="title"
+        ><a href="#" class="right waves-effect waves-light btn-small">Follow</a
+        ><a href="#"
+          ><strong>Adobe XD</strong><br /><small>@AdobeXd</small></a
+        ></span
+      ><br /><br />
+      <p>
+        Remember to download @creativemints' Art Deco Icons Set to get started
+        designing a splash screen, and share your XD prototype with us by
+        midnight PT on June 10th: https://adobe.ly/xdartdecobehance
+      </p>
+      <br />
+      <p><small>16 hours ago</small></p>
+      <br />
+      <div style="clear: both"></div>
+      <span class="texttweet">
+        <a href="#">125 Retweets</a>
+        <a href="#">436 Likes</a>
+      </span>
+      <span class="texttweetimage">
+        <img src="images/fotoprofil.jpg" alt="" class="circletweet" />
+        <img src="images/fotoprofil.jpg" alt="" class="circletweet" />
+      </span>
+      <div style="clear: both"></div>
+      <br />
+      <div class="row">
+        <div class="col s2">
+          <a href="#"><i class="material-icons">chat_bubble_outline</i></a>
+        </div>
+        <div class="col s2">
+          <a href="#"><i class="material-icons">repeat</i></a>
+        </div>
+        <div class="col s2">
+          <a href="#"><i class="material-icons">star_border</i></a>
+        </div>
+        <div class="col s2">
+          <a href="#"><i class="material-icons">mail_outline</i></a>
+        </div>
+      </div>
+    </li>
+    <li class="collection-item avatar">
+      <img src="images/fotoprofil.jpg" alt="" class="circle" />
+      Replying to <a href="#">@AdobeXd</a><br />
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea
+            class="materialize-textarea areatweet"
+            placeholder="Tweet your reply"
+            style="height: 81px"
+          ></textarea>
+          <button class="waves-effect waves-light btn-small modal-close">
+            Reply
+          </button>
+        </div>
+      </div>
+    </li>
+    <li class="collection-item avatar">
+      <img src="images/fotoprofil.jpg" alt="" class="circle" />
+      <span class="title"
+        ><a href="#"
+          ><strong>Anonymouse</strong> <small>@Anoniem . Jun 6</small></a
+        ></span
+      ><br />Replying to <a href="#">@AdobeXd</a><br /><br />
+      <p>Good for your tweet</p>
+      <a class="secondary-content" href="#" data-target="dropdownoption"
+        ><i class="material-icons">expand_more</i></a
+      >
+      <br />
+      <div class="row">
+        <div class="col s2">
+          <a href="#"><i class="material-icons">chat_bubble_outline</i></a>
+        </div>
+        <div class="col s2">
+          <a href="#"><i class="material-icons">repeat</i></a>
+        </div>
+        <div class="col s2">
+          <a href="#"><i class="material-icons">star_border</i></a>
+        </div>
+        <div class="col s2">
+          <a href="#"><i class="material-icons">mail_outline</i></a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+{% endblock content %}

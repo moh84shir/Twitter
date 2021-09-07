@@ -1,0 +1,26 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'shared/_HeaderRefrences.html' %}
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    {% include 'shared/Header.html' %}
+    <div class="bgcontainers">
+    <div class="row">
+        <div class="col m3">
+            {% include 'shared/LeftMenu.html' %}
+        </div>
+        <div class="col m6">
+            {% block content %}{% endblock content %}
+        </div>
+        <div class="col m3">
+            {% include 'shared/RightMenu.html' %}
+        </div>
+    </div>
+</body>
+    {% include 'shared/_FooterRefrences.html' %}
+</html>

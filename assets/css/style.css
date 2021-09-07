@@ -1,0 +1,194 @@
+nav.bottomnav{
+	margin-top: -5px !important;
+	background: #fff !important;
+	padding:0 50px 0 50px !important;
+}
+nav.bottomnav a{
+	color:#76838c !important;
+}
+ul.bottomul li a{
+	font-size: medium !important;
+	color:#76838c !important;
+	line-height: 1.0em !important;
+	padding:10px;
+	font-weight: bold;
+}
+ul.bottomul li a:hover{
+	background: transparent !important;
+	border-bottom: 2px solid #0084b4 !important;
+	color: #0084b4 !important;
+}
+ul.bottomul li a span:before{
+	content:"\000A";
+    white-space: pre;
+}
+.nav-wrapper{
+	padding:0 50px 0 50px !important;
+	background: #fff !important;
+}
+.nav-wrapper ul li a{
+	color:#76838c !important;
+	font-weight: bold !important;
+	font-size: small !important;
+}
+.nav-wrapper ul li a.active{
+	background: transparent !important;
+	border-bottom: 2px solid #0084b4 !important;
+	color: #0084b4 !important;
+}
+.nav-wrapper ul li a:hover{
+	background: transparent !important;
+	border-bottom: 2px solid #0084b4 !important;
+	color: #0084b4 !important;
+}
+.nav-wrapper a{
+	color:#76838c !important;
+	font-weight: bold !important;
+	font-size: small !important;
+}
+.nav-wrapper a:hover{
+	background: transparent !important;
+	border-bottom: 2px solid #0084b4 !important;
+	color: #0084b4 !important;
+}
+.nav-wrapper label.label-icon{
+	color:#76838c !important;
+	font-weight: bold !important;
+	font-size: small !important;
+}
+ul.dropdown-content{
+	width: auto !important;
+}
+ul.dropdown-content li a{
+	font-size: small !important;
+}
+.dropdown-content li.padding-non-a{
+	padding:20px !important;
+	font-weight: bold;
+}
+.dropdown-content li.padding-non-a small{
+	font-weight: normal;
+}
+span.card-title small{
+	color: #888;
+}
+span.card-title a{
+	color: #777;
+}
+span.card-title a:hover{
+	text-decoration: underline;
+}
+.btnfollow{
+	background: transparent;
+	color: #888;
+	border-radius: 50%;
+}
+.btnfollow:hover{
+	color: #fff;
+}
+span.card-title small a{
+	font-size: small;
+}
+.card-action small{
+	float: right;
+	font-size: smaller;
+	margin: 0px 0 0 0px;
+}
+small.linka a{
+	margin: 5px;
+}
+body{
+	background: #e6ecf0;
+}
+
+.headp img{
+	width: 100%;
+}
+
+h5.profidentity{
+	font-size: medium !important;
+	font-weight: bold !important;
+	padding-left: 20px;
+}
+h5.profidentity span:before{
+	content:"\000A";
+    white-space: pre;
+}
+h5.profidentity span{
+    font-weight: normal;
+    font-size: small;
+    color: #888;
+    padding-left: 20px;
+}
+p.biowrap{
+	padding-left: 20px;
+}
+
+.cover{
+	object-fit: cover;
+	width: 30%;
+	margin: 2px;
+	height: 80px;
+	border-radius: 5px;
+}
+
+img.photoprofile{
+	margin-top: -50px;
+	border:5px solid #fff;
+	clear: both;
+	position: relative;
+}
+a.linktweets{
+	margin-right: 25px;
+	font-size: larger;
+	font-weight: bold;
+	padding: 0;
+}
+a.linktweets.active{
+	color: #000;
+}
+
+textarea.areatweet{
+	border:1px solid #e0e0e0;
+	padding: 30px;
+	border-radius: 5px;
+}
+span.texttweet{
+	padding:10px;
+	border-top:1px solid #e0e0e0;
+	border-right:1px solid #e0e0e0;
+	border-bottom:1px solid #e0e0e0;
+}
+span.texttweet a{
+	margin-right: 20px;
+	font-size: small;
+}
+span.texttweetimage{
+	padding:10px;
+	margin-left: -5px;
+	border-top:1px solid #e0e0e0;
+	border-bottom:1px solid #e0e0e0;
+}
+span.texttweetimage img{
+	margin: 0 10px -10px 0;
+	border-radius: 50%;
+	height: 30px;
+}
+
+li.collection-item.avatar{
+	cursor: pointer;
+}
+img.follower{
+	margin-right:10px;
+	border-radius: 50%;
+	height: 30px;
+}
+img.profilecircle{
+	float: left;
+	margin-top: -30px;
+	border-radius: 50%;
+	border:2px solid #fff;
+	height: 70px;
+	margin-right: 10px;
+	position: relative;
+}
