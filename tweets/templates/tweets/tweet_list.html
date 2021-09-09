@@ -3,7 +3,8 @@
 {% block content %}
 <div class="col m6">
   <ul class="collection" style="border: none">
-  {% for tweet in tweets %}
+    <h1>{{ name }}</h1>
+  {% for tweet in tweet_list %}
       <li class="collection-item avatar">
       <span class="title"
         ><a href="#" class="right waves-effect waves-light btn-small">Follow</a
@@ -15,15 +16,8 @@
         {{ tweet.text }}
       </p>
       <br />
-      <p><small>16 hours ago</small></p>
       <br />
       <div style="clear: both"></div>
-      <span class="texttweet">
-        <a href="#">125 Retweets</a>
-        <a href="#">436 Likes</a>
-      </span>
-      <span class="texttweetimage">
-      </span>
       <div style="clear: both"></div>
       <br />
       <div class="row">
