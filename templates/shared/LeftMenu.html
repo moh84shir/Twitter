@@ -1,5 +1,4 @@
 {% load static %}
-<div class="col m3">
   <!-- profil card -->
   <div class="card">
     <div class="card-image">
@@ -7,8 +6,8 @@
     <div class="card-content">
       <span class="card-title">
         <div style="margin-top: -20px">
-          <a href="profile.html"><b>AH. HANDOYO</b></a
-          ><br /><small>@HandExcel</small>
+          <a href="profile.html"><b>{{ user.first_name }} {{ user.last_name }}</b></a
+          ><br /><small>@{{ user.username }}</small>
         </div>
       </span>
       <div class="row">
@@ -30,4 +29,3 @@
       </ul>
     </div>
   </div>
-</div>

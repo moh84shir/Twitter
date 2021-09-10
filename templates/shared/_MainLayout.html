@@ -1,4 +1,5 @@
 {% load static %}
+{% load render_partial %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,14 +12,12 @@
     {% include 'shared/Header.html' %}
     <div class="bgcontainers">
     <div class="row">
-        <div class="">
-            {% include 'shared/LeftMenu.html' %}
+        <div class="col m3">
+            {% comment %} {% include 'shared/LeftMenu.html' %} {% endcomment %}
+            {% render_partial "left_menu" %}
         </div>
-        <div class="">
+        <div class="col m8">
             {% block content %}{% endblock content %}
-        </div>
-        <div class="">
-            {% include 'shared/RightMenu.html' %}
         </div>
     </div>
 </body>
