@@ -29,8 +29,8 @@ INSTALLED_APPS = [
     'django_render_partial',
 
     # My Apps
-    'tweets',
-    'account',
+    'tweets.apps.TweetsConfig',
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [

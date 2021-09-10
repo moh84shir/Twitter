@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from . import forms
 from django.contrib.auth import authenticate, login, logout
@@ -31,7 +31,8 @@ class SigninView(View):
                 return redirect('/')
             else:
                 signin_form.add_error(
-                    field="user_name", error="Your user name or password is not ok")
+                    field="user_name",
+                    error="Your user name or password is not ok")
 
         self.context['signin_form'] = signin_form
 
@@ -52,13 +53,32 @@ class SignupView(View):
 
     def post(self, request):
         signup_form = self.form_class(request.POST)
-        if not signup_form.is_valid():
+        import pdb; pdb.set_trace()
+        if signup_form.is_valid():
             user_name = signup_form.cleaned_data.get('user_name')
-            password = signup_form.cleaned_data.get('password')
+            first_name = signup_form.cleaned_data.get('user_first_name')
+            last_name = signup_form.cleaned_data.get('user_last_name')
+            email = signup_form.cleaned_data.get('user_email')
+            password = signup_form.cleaned_data.get('user_password')
+            re_password = signup_form.cleaned_data.get('re_password')
+            is_user_exists = User.objects.filter(username=user_name).exists()
 
-            User.objects.create_user(
+            if password != re_password:
+                signup_form.add_error('re_password', "password != re_password")
+                return redirect('/account/signup/')
+
+
+            if is_user_exists:
+                signup_form.add_error('user_name', "this user is exists")
+                return redirect('/account/signup/')
+
+
+            User.objects.create(
                 username=user_name,
-                password=password
+                first_name=first_name,
+                last_name=last_name,
+                password=password,
+                email=email
             )
 
             return redirect('/account/signin/')

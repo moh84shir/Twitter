@@ -1,4 +1,6 @@
 from django import forms
+from django.contrib.auth.models import User
+from django.shortcuts import get_object_or_404
 
 
 class SigninForm(forms.Form):
@@ -34,7 +36,28 @@ class SignupForm(forms.Form):
         )
     )
 
-    email = forms.EmailField(
+    user_first_name = forms.CharField(
+        max_length=120,
+        label="Please Enter Your First Name",
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "First Name"
+            }
+        )
+    )
+
+    user_last_name = forms.CharField(
+        max_length=120,
+        label="Please Enter Your Last Name",
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Last Name"
+            }
+        )
+    )
+
+
+    user_email = forms.EmailField(
         max_length=120,
         label="Please Enter Your User Email",
         widget=forms.EmailInput(
@@ -44,7 +67,7 @@ class SignupForm(forms.Form):
         )
     )
 
-    password = forms.CharField(
+    user_password = forms.CharField(
         max_length=120,
         label="Please Enter Your Password",
         widget=forms.PasswordInput(
