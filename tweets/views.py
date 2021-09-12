@@ -12,7 +12,7 @@ class TweetListView(ListView):
     model = Tweet
     template_name = "tweets/tweet_list.html"
 
-    @method_decorator(login_required(login_url="account/signin"))
+    @method_decorator(login_required(login_url="/account/signin"))
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
@@ -29,7 +29,7 @@ class AddTweet(View):
     context = {}
 
 
-    @method_decorator(login_required(login_url="account/signin"))
+    @method_decorator(login_required(login_url="/account/signin"))
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
