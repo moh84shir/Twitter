@@ -56,7 +56,6 @@ class SignupForm(forms.Form):
         )
     )
 
-
     user_email = forms.EmailField(
         max_length=120,
         label="Please Enter Your User Email",
@@ -86,3 +85,33 @@ class SignupForm(forms.Form):
             }
         )
     )
+
+    def clean_user_name(self):
+        user_name = self.cleaned_data.get('user_name')
+
+        is_user_exists_by_username = User.objects.filter(
+            username=user_name).exists()
+        if is_user_exists_by_username:
+            raise forms.ValidationError('this user is exists')
+
+        return user_name
+
+    def clean_re_password(self):
+        password = self.cleaned_data.get('user_password')
+        re_password = self.cleaned_data.get('re_password')
+
+        if password != re_password:
+            raise forms.ValidationError('password != re password')
+
+        return password
+
+    def clean_user_email(self):
+        user_email = self.cleaned_data.get('user_email')
+
+        is_user_exists_by_email = User.objects.filter(
+            email=user_email).exists()
+
+        if is_user_exists_by_email:
+            raise forms.ValidationError('this user is exists')
+
+        return user_email

@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.models import User
 
 
 class SendMessageForm(forms.Form):
@@ -41,3 +42,13 @@ class SendMessageForm(forms.Form):
             }
         )
     )
+
+
+    def clean_to_user(self):
+        to_user = self.cleaned_data.get("to_user")
+        is_user_exists = User.objects.filter(username=to_user).exists()
+
+        if not is_user_exists:
+            raise forms.ValidationError('user is not exists')
+
+        return to_user

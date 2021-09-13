@@ -52,44 +52,51 @@
                                             <label for="icon_telephone">Re_Password</label>
                                         </div>
                                         <div class="input-field col s12"  style="text-align:center;">
-                                            <button type="submit" class="waves-effect waves-light btn-small"> Login</button>
+                                            <button type="submit" class="waves-effect waves-light btn-small">SignUp</button>
                                         </div>
                                     </div>
                                 </form>
                             </div>
-                            <!-- {% for error in signup_form.user_name.errors %}
+                             {% for error in signup_form.user_name.errors %}
                               <p class="red-text">
-                                {{ error }}
+                                {% if error != "This field is required." %}
+                                  {{ error }}
+                                {% endif %}
                               </p>
                             {% endfor %}
                             {% for error in signup_form.user_password.errors %}
                               <p class="red-text">
-                                {{ error }}
+                                {% if error != "This field is required." %}
+                                  {{ error }}
+                                {% endif %}
                               </p>
                             {% endfor %}
                             {% for error in signup_form.re_password.errors %}
                               <p class="red-text">
-                                {{ error }}
+                                {% if error != "This field is required." %}
+                                  {{ error }}
+                                {% endif %}
                               </p>
                             {% endfor %}
                             {% for error in signup_form.user_first_name.errors %}
                               <p class="red-text">
-                                {{ error }}
+                                {% if error != "This field is required." %}
+                                  {{ error }}
+                                {% endif %}
                               </p>
                             {% endfor %}
                             {% for error in signup_form.user_email.errors %}
                               <p class="red-text">
-                                {{ error }}
+                                {% if error != "This field is required." %}
+                                  {{ error }}
+                                {% endif %}
                               </p>
                             {% endfor %}
                             {% for error in signup_form.user_last_name.errors %}
                               <p class="red-text">
-                                {{ error }}
-                              </p>
-                            {% endfor %} -->
-                            {% for error in signup_form.errors %}
-                              <p class="red-text">
-                                {{ error }}
+                                {% if error != "This field is required." %}
+                                  {{ error }}
+                                {% endif %}
                               </p>
                             {% endfor %}
 

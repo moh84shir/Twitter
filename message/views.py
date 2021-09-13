@@ -21,7 +21,7 @@ class SendMessageView(View):
     template_name = "messages/send_message.html"
     context = {}
 
-    def get(self, request, *args, **kwargs):
+    def get(self, request):
         send_message_form = self.form_class(request.POST or None)
         self.context["send_message_form"] = send_message_form
         return render(self.request, self.template_name, self.context)
@@ -32,28 +32,18 @@ class SendMessageView(View):
             title = send_message_form.cleaned_data.get('title')
             text = send_message_form.cleaned_data.get('text')
             subject = send_message_form.cleaned_data.get('subject')
-            to_username = send_message_form.cleaned_data.get('to_user')
+            to_user = User.objects.filter(username=send_message_form.cleaned_data.get('to_user')).first()
             from_user = self.request.user
 
-            is_user_exists = User.objects.filter(username=to_username).exists()
-            if is_user_exists is not None:
-                to_user = get_object_or_404(User, username=to_username)
 
-                if to_user is not None:
-
-                    models.Messages.objects.create(
-                        title=title,
-                        text=text,
-                        subject=subject,
-                        to_user=to_user,
-                        from_user=from_user
-                    )
-                    return redirect('/messages')
-
-                else:
-                    send_message_form.add_error(
-                        'to_user', 'to user is not exists')
-                    return redirect('/send-message')
+            models.Messages.objects.create(
+                title=title,
+                text=text,
+                subject=subject,
+                to_user=to_user,
+                from_user=from_user
+            )
+            return redirect('/messages')
 
         self.context["send_message_form"] = send_message_form
         return render(self.request, self.template_name, self.context)

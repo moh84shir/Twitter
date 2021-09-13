@@ -53,8 +53,6 @@ class SignupView(View):
 
     def post(self, request):
         signup_form = self.form_class(request.POST)
-        import pdb
-        pdb.set_trace()
         if signup_form.is_valid():
             user_name = signup_form.cleaned_data.get('user_name')
             first_name = signup_form.cleaned_data.get('user_first_name')
@@ -63,38 +61,34 @@ class SignupView(View):
             password = signup_form.cleaned_data.get('user_password')
             re_password = signup_form.cleaned_data.get('re_password')
             is_user_exists = User.objects.filter(username=user_name).exists()
-            print(
-                user_name,
-                first_name,
-                last_name,
-                email,
-                password,
-                re_password
-            )
 
-            if password != re_password:
-                signup_form.add_error('re_password', "password != re_password")
+            # if password != re_password:
+            #     signup_form.add_error('re_password', "password != re_password")
 
-            if is_user_exists:
-                signup_form.add_error('user_name', "this user is exists")
+            # if is_user_exists:
+            #     signup_form.add_error('user_name', "this user is exists")
 
-            if len(password) < 8:
-                signup_form.add_error('user_password', "password is not ok")
+            # if len(password) < 8:
+            #     signup_form.add_error('user_password', "password is not ok")
 
-            if password == user_name:
-                signup_form.add_error('user_password', "password is not ok")
+            # if password == user_name:
+            #     signup_form.add_error('user_password', "password is not ok")
 
-            if password.lower() == password:
-                signup_form.add_error('user_password', "password is not ok")
+            # if password.lower() == password:
+            #     signup_form.add_error('user_password', "password is not ok")
 
-            if password.upper() == password:
-                signup_form.add_error('user_password', "password is not ok")
+            # if password.upper() == password:
+            #     signup_form.add_error('user_password', "password is not ok")
 
-            if password.isdigit():
-                signup_form.add_error('user_password', "password is not ok")
+            # if password.isdigit():
+            #     signup_form.add_error('user_password', "password is not ok")
 
-            if password.isalpha():
-                signup_form.add_error('user_password', "password is not ok")
+            # if password.isalpha():
+            #     signup_form.add_error('user_password', "password is not ok")
+
+            # if user_name in password:
+            #     signup_form.add_error('user_password', "password is not ok")
+
 
             User.objects.create_user(
                 username=user_name,
