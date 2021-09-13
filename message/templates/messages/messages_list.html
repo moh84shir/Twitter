@@ -1,0 +1,28 @@
+{% extends 'shared/_MainLayout.html' %}
+{% block title %}Twitter - Messages List{% endblock title %}
+{% block content %}
+<br><br>
+  <div class="row">
+    <div class="col m12">
+          <a class="red-text" href="/send-message">
+
+        <button style="width: 100%;" class="waves-effect waves-light btn">
+            send message
+        </button>
+
+          </a>
+    </div>
+  </div>
+  {% for message in messages_list %}
+  <ul class="collection" style="border:none;">
+
+    <li class="collection-item avatar">
+      <img src="images/fotoprofil.jpg" alt="" class="circle">
+      <span class="title"><a href="#"><small>@{{ message.from_user }}</small> <span class="right"><small><time>{{ message.time }}</time></small></span></a></span><br>
+      <p>{{ message.text }}</p>
+    </li>
+
+
+  </ul>
+  {% endfor %}
+{% endblock content %}

@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     # My Apps
     'tweets.apps.TweetsConfig',
     'account.apps.AccountConfig',
+    'message.apps.MessageConfig',
 ]
 
 MIDDLEWARE = [
